@@ -3,7 +3,7 @@ import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } fro
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button, Chip, Field, styles } from '../components/ui';
 import { getLang, Lang, LANGUAGES, setLang, t } from '../i18n';
-import { supabase } from '../services/supabase';
+import { signInWithGoogle, supabase } from '../services/supabase';
 import { colors } from '../theme';
 import { notify } from '../utils';
 
@@ -57,6 +57,17 @@ export function LoginScreen() {
             <Text style={styles.h1}>{t('auth.title')}</Text>
             <Text style={[styles.body, { color: colors.muted, textAlign: 'center' }]}>{t('auth.subtitle')}</Text>
           </View>
+          {Platform.OS === 'web' && (
+            <>
+              <Button
+                variant="secondary"
+                title={`G  ${t('auth.google')}`}
+                disabled={busy}
+                onPress={() => signInWithGoogle().catch((e) => notify(t('auth.error'), String(e?.message ?? e)))}
+              />
+              <Text style={[styles.muted, { textAlign: 'center' }]}>{t('auth.or')}</Text>
+            </>
+          )}
           {mode === 'signup' && <Field placeholder={t('auth.name')} value={name} onChangeText={setName} autoComplete="name" />}
           <Field
             placeholder={t('auth.email')}
