@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { Avatar, Button, Chip, ChipRow, Field, Screen, styles } from '../components/ui';
 import { ScreenProps } from '../navigation';
 import { t } from '../i18n';
-import { useStore } from '../store';
+import { isRemote, useStore } from '../store';
 import { colors } from '../theme';
 
 const EMOJIS = ['🍻', '🍕', '🥘', '🎉', '👨‍👩‍👧', '💼', '🏖️', '🥞', '🍷', '🔥'];
@@ -26,9 +26,9 @@ export function NewGroupScreen({ navigation }: ScreenProps<'NewGroup'>) {
           <Chip key={e} label={e} active={e === emoji} onPress={() => setEmoji(e)} />
         ))}
       </ChipRow>
-      <Text style={styles.label}>{t('newGroup.friends')}</Text>
+      {!isRemote && <Text style={styles.label}>{t('newGroup.friends')}</Text>}
       <View style={{ gap: 8 }}>
-        {friends.map((u) => {
+        {(isRemote ? [] : friends).map((u) => {
           const on = members.includes(u.id);
           return (
             <Pressable
@@ -48,7 +48,7 @@ export function NewGroupScreen({ navigation }: ScreenProps<'NewGroup'>) {
           );
         })}
       </View>
-      <Text style={styles.muted}>{t('newGroup.help')}</Text>
+      <Text style={styles.muted}>{t(isRemote ? 'newGroup.inviteHelp' : 'newGroup.help')}</Text>
       <Button
         title={t('newGroup.create')}
         disabled={!name.trim()}

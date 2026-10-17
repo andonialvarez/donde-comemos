@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { Avatar, Button, Card, Chip, ChipRow, Empty, Field, PlaceMeta, PlaceThumb, Screen, SectionTitle, styles } from '../components/ui';
 import { cuisineLabel, LANGUAGES, t } from '../i18n';
 import { usingGoogle } from '../services/places';
-import { useStore } from '../store';
+import { isRemote, useStore } from '../store';
 import { colors } from '../theme';
 import { confirm, timeAgo } from '../utils';
 
@@ -100,6 +100,9 @@ export function ProfileScreen() {
         ))
       )}
 
+      {isRemote ? (
+        <Button variant="danger" small title={t('profile.logout')} style={{ marginTop: 16, alignSelf: 'center' }} onPress={actions.signOut} />
+      ) : (
       <Card style={{ backgroundColor: colors.amberSoft, borderColor: colors.amberSoft, marginTop: 16 }}>
         <Text style={styles.h3}>{t('profile.testTitle')}</Text>
         <Text style={styles.body}>
@@ -115,6 +118,7 @@ export function ProfileScreen() {
           }}
         />
       </Card>
+      )}
     </Screen>
   );
 }

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { Avatar, Button, Card, Empty, Field, Screen, SectionTitle, styles } from '../components/ui';
 import { t, tn } from '../i18n';
-import { useStore } from '../store';
+import { isRemote, useStore } from '../store';
 import { notify } from '../utils';
 
 export function GroupsScreen() {
@@ -12,13 +12,19 @@ export function GroupsScreen() {
   const [code, setCode] = useState('');
   const mine = state.groups.filter((g) => g.memberIds.includes(state.meId));
 
-  const join = () => {
-    const g = state.groups.find((x) => x.inviteCode === code.trim().toUpperCase());
-    if (!g) return notify(t('groups.badCode'), t('groups.badCodeText'));
-    if (g.memberIds.includes(state.meId)) return nav.navigate('GroupDetail', { id: g.id });
-    actions.addGroupMember(g.id, state.meId);
-    setCode('');
-    nav.navigate('GroupDetail', { id: g.id });
+  const [joining, setJoining] = useState(false);
+  const join = async () => {
+    setJoining(true);
+    try {
+      const id = await actions.joinGroup(code);
+      if (!id) return notify(t('groups.badCode'), t(isRemote ? 'groups.badCodeRemote' : 'groups.badCodeText'));
+      setCode('');
+      nav.navigate('GroupDetail', { id });
+    } catch (e: any) {
+      notify(t('groups.badCode'), String(e?.message ?? e));
+    } finally {
+      setJoining(false);
+    }
   };
 
   return (
@@ -64,7 +70,7 @@ export function GroupsScreen() {
         <View style={{ flex: 1 }}>
           <Field placeholder={t('groups.codePh')} value={code} onChangeText={setCode} autoCapitalize="characters" />
         </View>
-        <Button small title={t('groups.joinBtn')} disabled={!code.trim()} onPress={join} />
+        <Button small title={t('groups.joinBtn')} disabled={!code.trim() || joining} onPress={join} />
       </View>
     </Screen>
   );

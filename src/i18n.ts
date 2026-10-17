@@ -139,6 +139,7 @@ const es = {
   'groups.joinBtn': 'Unirme',
   'groups.badCode': 'Código no válido',
   'groups.badCodeText': 'Revisa el código que te han pasado. (En modo prueba puedes usar BRUNCH)',
+  'groups.badCodeRemote': 'Revisa el código que te han pasado.',
 
   // Nuevo grupo
   'newGroup.name': 'Nombre del grupo',
@@ -211,6 +212,24 @@ const es = {
   'profile.resetConfirm': '¿Reiniciar?',
   'profile.resetText': 'Se borrará todo lo que hayas añadido.',
   'profile.resetBtn': 'Reiniciar',
+
+  // Cuenta
+  'auth.title': 'Dónde Comemos',
+  'auth.subtitle': 'Tus restaurantes, tus listas y tus amigos.',
+  'auth.login': 'Entrar',
+  'auth.signup': 'Crear cuenta',
+  'auth.name': 'Tu nombre',
+  'auth.email': 'Correo electrónico',
+  'auth.password': 'Contraseña (mínimo 6 caracteres)',
+  'auth.toSignup': '¿No tienes cuenta? Crea una',
+  'auth.toLogin': '¿Ya tienes cuenta? Entra',
+  'auth.checkEmail': 'Revisa tu correo',
+  'auth.checkEmailText': 'Te hemos enviado un enlace para confirmar la cuenta. Después vuelve aquí y entra.',
+  'auth.error': 'No se ha podido entrar',
+  'profile.logout': 'Cerrar sesión',
+  'error.sync': 'No se ha podido guardar',
+  'error.load': 'No se han podido cargar los datos',
+  'newGroup.inviteHelp': 'Cuando lo crees, comparte el código del grupo para que tus amigos se unan.',
 };
 
 export type StringKey = keyof typeof es;
@@ -339,6 +358,7 @@ const eu: Record<StringKey, string> = {
   'groups.joinBtn': 'Sartu',
   'groups.badCode': 'Kode okerra',
   'groups.badCodeText': 'Egiaztatu bidali dizuten kodea. (Proba moduan BRUNCH erabil dezakezu)',
+  'groups.badCodeRemote': 'Egiaztatu bidali dizuten kodea.',
 
   'newGroup.name': 'Taldearen izena',
   'newGroup.namePh': 'Adib.: Unibertsitateko afariak',
@@ -407,6 +427,22 @@ const eu: Record<StringKey, string> = {
   'profile.resetConfirm': 'Berrezarri?',
   'profile.resetText': 'Gehitu duzun guztia ezabatuko da.',
   'profile.resetBtn': 'Berrezarri',
+  'auth.title': 'Dónde Comemos',
+  'auth.subtitle': 'Zure jatetxeak, zure zerrendak eta zure lagunak.',
+  'auth.login': 'Sartu',
+  'auth.signup': 'Kontua sortu',
+  'auth.name': 'Zure izena',
+  'auth.email': 'Helbide elektronikoa',
+  'auth.password': 'Pasahitza (gutxienez 6 karaktere)',
+  'auth.toSignup': 'Ez duzu konturik? Sortu bat',
+  'auth.toLogin': 'Baduzu kontua? Sartu',
+  'auth.checkEmail': 'Begiratu zure posta',
+  'auth.checkEmailText': 'Kontua berresteko esteka bat bidali dizugu. Gero itzuli hona eta sartu.',
+  'auth.error': 'Ezin izan da sartu',
+  'profile.logout': 'Saioa itxi',
+  'error.sync': 'Ezin izan da gorde',
+  'error.load': 'Ezin izan dira datuak kargatu',
+  'newGroup.inviteHelp': 'Sortzen duzunean, partekatu taldearen kodea zure lagunak sar daitezen.',
 };
 
 const STRINGS: Record<Lang, Record<StringKey, string>> = { es, eu };

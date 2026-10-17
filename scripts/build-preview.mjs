@@ -27,6 +27,12 @@ const html = `<title>Dónde Comemos</title>
 <div id="root"></div>
 <script>${js}</script>
 `;
-fs.mkdirSync('preview', { recursive: true });
-fs.writeFileSync('preview/index.html', html);
-console.log('preview/index.html', (html.length / 1024).toFixed(0) + ' KB');
+// --standalone: documento completo (para GitHub Pages u otro hosting), en site/index.html
+const standalone = process.argv.includes('--standalone');
+const out = standalone
+  ? `<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />\n</head>\n<body>\n${html}</body>\n</html>\n`
+  : html;
+const outDir = standalone ? 'site' : 'preview';
+fs.mkdirSync(outDir, { recursive: true });
+fs.writeFileSync(`${outDir}/index.html`, out);
+console.log(`${outDir}/index.html`, (out.length / 1024).toFixed(0) + ' KB');

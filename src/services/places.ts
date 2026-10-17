@@ -58,7 +58,8 @@ async function searchGoogle(query: string): Promise<Place[]> {
       'Sin zona';
     // "Restaurante italiano" -> "italiano"; en euskera "Tapas-jatetxea" -> "Tapas"
     const cuisine = (p.primaryTypeDisplayName?.text ?? 'Restaurante')
-      .replace(/^(Restaurante|Especializado en)\s+/i, '')
+      .replace(/^Restaurante\s+/i, '')
+      .replace(/^especializado en\s+/i, '')
       .replace(/[-\s]jatetxea$/i, '');
     const cap = cuisine.charAt(0).toUpperCase() + cuisine.slice(1);
     return {
