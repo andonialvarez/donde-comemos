@@ -1,0 +1,464 @@
+// Textos de la app en castellano y euskera.
+// Para añadir un texto: ponlo en `es` y en `eu` con la misma clave.
+
+export type Lang = 'es' | 'eu';
+
+const es = {
+  // General
+  'common.you': 'Tú',
+  'common.save': 'Guardar',
+  'common.cancel': 'Cancelar',
+  'common.ok': 'Vale',
+  'common.accept': 'Aceptar',
+  'common.close': 'Cerrar',
+  'common.remove': 'Quitar',
+  'common.delete': 'Borrar',
+  'common.icon': 'Icono',
+  'common.public': 'Pública',
+  'common.private': 'Privada 🔒',
+  'common.places': '{n} sitios',
+  'common.place': '{n} sitio',
+  'common.noScore': 'Sin nota',
+  'common.googleRating': '{r}★ Google',
+  'common.back': 'Atrás',
+
+  // Tiempo
+  'time.now': 'ahora',
+  'time.min': 'hace {n} min',
+  'time.hour': 'hace {n} h',
+  'time.day': 'hace {n} día',
+  'time.days': 'hace {n} días',
+  'time.month': 'hace {n} mes',
+  'time.months': 'hace {n} meses',
+
+  // Navegación
+  'nav.discover': 'Descubrir',
+  'nav.myLists': 'Mis listas',
+  'nav.roulette': 'Ruleta',
+  'nav.rouletteTitle': '¿Dónde cenamos hoy?',
+  'nav.groups': 'Grupos',
+  'nav.profile': 'Perfil',
+  'nav.list': 'Lista',
+  'nav.group': 'Grupo',
+  'nav.addPlace': 'Añadir restaurante',
+  'nav.newList': 'Nueva lista',
+  'nav.newGroup': 'Nuevo grupo',
+  'nav.newPoll': 'Nueva votación',
+
+  // Compartir
+  'share.listHeader': '{emoji} {title}: lista de {owner} en Dónde Comemos',
+  'share.copy': 'Copiar texto',
+  'share.copied': 'Copiado',
+  'share.copiedText': 'Pégalo en WhatsApp o donde quieras.',
+  'share.copyFailed': 'No se pudo copiar',
+  'share.copyFailedText': 'Mantén pulsado el texto para seleccionarlo y copiarlo.',
+
+  // Descubrir
+  'discover.intro': 'Listas que comparten tus amigos. Dale ❤️ a las que te parezcan buenas.',
+  'discover.top': '🏆 Más gustadas',
+  'discover.new': '🆕 Recientes',
+  'discover.emptyTitle': 'Nada por aquí',
+  'discover.emptyText': 'Cuando tus amigos compartan listas aparecerán aquí.',
+
+  // Mis listas
+  'myLists.create': '＋ Crear lista',
+  'myLists.emptyTitle': 'Aún no tienes listas',
+  'myLists.emptyText': 'Crea una y empieza a añadir sitios donde has comido.',
+  'myLists.liked': '❤️ Listas que te gustan',
+
+  // Detalle de lista
+  'list.gone': 'Esta lista ya no existe',
+  'list.yours': 'Tu lista',
+  'list.by': 'Lista de {name}',
+  'list.addPlace': '＋ Añadir sitio',
+  'list.liked': '❤️ Te gusta',
+  'list.like': '🤍 Me gusta esta lista',
+  'list.share': '📤 Compartir',
+  'list.emptyTitle': 'Lista vacía',
+  'list.emptyText': 'Busca un restaurante y añade tu opinión.',
+  'list.removeEntry': '¿Quitar de la lista?',
+  'list.delete': 'Borrar lista',
+  'list.deleteConfirm': '¿Borrar esta lista?',
+  'list.cantUndo': 'No se puede deshacer.',
+
+  // Nueva lista
+  'newList.name': 'Nombre',
+  'newList.namePh': 'Ej: Mejores tapas de Madrid',
+  'newList.description': 'Descripción',
+  'newList.descriptionPh': '¿De qué va esta lista?',
+  'newList.public': 'Lista pública',
+  'newList.publicHelp': 'Tus amigos la verán en Descubrir y podrán darle me gusta.',
+  'newList.saveChanges': 'Guardar cambios',
+  'newList.create': 'Crear lista',
+
+  // Añadir sitio
+  'add.searchPh': '🔍 Busca un restaurante por nombre, zona o tipo',
+  'add.google': 'Resultados de Google',
+  'add.mock': 'Modo prueba: restaurantes de ejemplo (prueba "pizza", "Malasaña" o "sushi")',
+  'add.noResults': 'No hay resultados para “{q}”.',
+  'add.change': 'Cambiar',
+  'add.visited': 'Ya he estado aquí',
+  'add.visitedHelp': 'Se guarda en tu perfil',
+  'add.score': 'Tu nota',
+  'add.pros': '👍 Lo bueno',
+  'add.prosPh': 'Qué te gustó',
+  'add.cons': '👎 Lo malo',
+  'add.consPh': 'Qué mejorarías',
+  'add.reco': '💡 Recomendación',
+  'add.recoPh': 'Qué pedir, cuándo ir, si reservar…',
+
+  // Votos en grupos
+  'entry.wantOne': '{n} quiere ir',
+  'entry.wantMany': '{n} quieren ir',
+
+  // Ruleta
+  'roulette.source': '¿De dónde elegimos?',
+  'roulette.all': '🌍 Todos mis sitios',
+  'roulette.area': 'Zona',
+  'roulette.allAreas': 'Todas',
+  'roulette.cuisine': 'Tipo de comida',
+  'roulette.allCuisines': 'Todos',
+  'roulette.onlyNew': 'Solo sitios donde no he estado',
+  'roulette.emptyTitle': 'No hay sitios con esos filtros',
+  'roulette.emptyText': 'Quita algún filtro o añade restaurantes a tus listas.',
+  'roulette.spinning': 'Girando…',
+  'roulette.again': '🎲 Otra vez',
+  'roulette.spin': '🎲 ¡Girar la ruleta!',
+  'roulette.tonight': 'Hoy cenáis en',
+  'roulette.went': '✅ Hemos ido: guardar en mi perfil',
+
+  // Grupos
+  'groups.create': '＋ Crear grupo',
+  'groups.emptyTitle': 'No estás en ningún grupo',
+  'groups.emptyText': 'Crea uno o únete con un código.',
+  'groups.people': '{n} personas',
+  'groups.openPoll': '{n} votación abierta',
+  'groups.openPolls': '{n} votaciones abiertas',
+  'groups.join': 'Unirme a un grupo',
+  'groups.codePh': 'Código de invitación',
+  'groups.joinBtn': 'Unirme',
+  'groups.badCode': 'Código no válido',
+  'groups.badCodeText': 'Revisa el código que te han pasado. (En modo prueba puedes usar BRUNCH)',
+
+  // Nuevo grupo
+  'newGroup.name': 'Nombre del grupo',
+  'newGroup.namePh': 'Ej: Cenas de la uni',
+  'newGroup.friends': 'Añadir amigos',
+  'newGroup.help': 'También podrás invitar a más gente con el código del grupo.',
+  'newGroup.create': 'Crear grupo',
+
+  // Nueva votación
+  'poll.ideas': 'Ideas rápidas',
+  'poll.qWhere': '¿Dónde cenamos?',
+  'poll.qDay': '¿Qué día quedamos?',
+  'poll.qTime': '¿A qué hora?',
+  'poll.fri': 'Viernes',
+  'poll.sat': 'Sábado',
+  'poll.sun': 'Domingo',
+  'poll.question': 'Pregunta',
+  'poll.questionPh': '¿Qué queréis decidir?',
+  'poll.options': 'Opciones',
+  'poll.optionPh': 'Opción {n}',
+  'poll.addOption': '＋ Añadir opción',
+  'poll.create': 'Crear votación',
+  'poll.closed': 'Cerrada',
+  'poll.vote': '{n} voto',
+  'poll.votes': '{n} votos',
+  'poll.reopen': 'Reabrir votación',
+  'poll.close': 'Cerrar votación',
+
+  // Detalle de grupo
+  'group.gone': 'Este grupo ya no existe',
+  'group.inviteTitle': 'Invitación a {name}',
+  'group.inviteText': '¡Únete a mi grupo "{name}" en Dónde Comemos! Código: {code}',
+  'group.code': 'Código:',
+  'group.invite': '📨 Invitar',
+  'group.tabPlaces': '🍽️ Sitios ({n})',
+  'group.tabPolls': '🗳️ Votaciones',
+  'group.tabChat': '💬 Chat ({n})',
+  'group.leave': 'Salir del grupo',
+  'group.leaveConfirm': '¿Salir del grupo?',
+  'group.leaveBtn': 'Salir',
+  'group.propose': '＋ Proponer un sitio',
+  'group.voteHelp': 'Pulsa ✋ en los sitios a los que quieras ir. Los más votados salen arriba.',
+  'group.noPlacesTitle': 'Todavía no hay sitios',
+  'group.noPlacesText': 'Propón el primero.',
+  'group.removePlace': '¿Quitar este sitio?',
+  'group.newPoll': '＋ Nueva votación',
+  'group.noPollsTitle': 'No hay votaciones',
+  'group.noPollsText': 'Decidid sitio, día u hora votando.',
+  'group.noMsgTitle': 'Sin mensajes',
+  'group.noMsgText': 'Escribe el primero.',
+  'group.msgPh': 'Escribe un mensaje…',
+  'group.send': 'Enviar',
+
+  // Perfil
+  'profile.name': 'Tu nombre',
+  'profile.visited': 'Sitios visitados',
+  'profile.lists': 'Listas',
+  'profile.likes': 'Me gusta',
+  'profile.groups': 'Grupos',
+  'profile.topCuisines': 'Lo que más comes',
+  'profile.history': '📍 Dónde he estado',
+  'profile.noVisitsTitle': 'Aún no hay visitas',
+  'profile.noVisitsText': 'Al añadir un sitio a una lista marca «Ya he estado aquí».',
+  'profile.removeVisit': '¿Quitar visita?',
+  'profile.language': 'Idioma',
+  'profile.testTitle': '🧪 Versión de prueba',
+  'profile.testText': 'Los datos se guardan solo en este móvil y tus amigos son de ejemplo.',
+  'profile.testMock': ' La búsqueda usa restaurantes de ejemplo hasta conectar Google.',
+  'profile.reset': 'Reiniciar datos de ejemplo',
+  'profile.resetConfirm': '¿Reiniciar?',
+  'profile.resetText': 'Se borrará todo lo que hayas añadido.',
+  'profile.resetBtn': 'Reiniciar',
+};
+
+export type StringKey = keyof typeof es;
+
+const eu: Record<StringKey, string> = {
+  'common.you': 'Zu',
+  'common.save': 'Gorde',
+  'common.cancel': 'Utzi',
+  'common.ok': 'Ados',
+  'common.accept': 'Onartu',
+  'common.close': 'Itxi',
+  'common.remove': 'Kendu',
+  'common.delete': 'Ezabatu',
+  'common.icon': 'Ikonoa',
+  'common.public': 'Publikoa',
+  'common.private': 'Pribatua 🔒',
+  'common.places': '{n} leku',
+  'common.place': '{n} leku',
+  'common.noScore': 'Notarik gabe',
+  'common.googleRating': '{r}★ Google',
+  'common.back': 'Atzera',
+
+  'time.now': 'orain',
+  'time.min': 'duela {n} min',
+  'time.hour': 'duela {n} h',
+  'time.day': 'duela egun {n}',
+  'time.days': 'duela {n} egun',
+  'time.month': 'duela hilabete {n}',
+  'time.months': 'duela {n} hilabete',
+
+  'nav.discover': 'Aurkitu',
+  'nav.myLists': 'Zerrendak',
+  'nav.roulette': 'Erruleta',
+  'nav.rouletteTitle': 'Non afalduko dugu gaur?',
+  'nav.groups': 'Taldeak',
+  'nav.profile': 'Profila',
+  'nav.list': 'Zerrenda',
+  'nav.group': 'Taldea',
+  'nav.addPlace': 'Jatetxea gehitu',
+  'nav.newList': 'Zerrenda berria',
+  'nav.newGroup': 'Talde berria',
+  'nav.newPoll': 'Bozketa berria',
+
+  'share.listHeader': '{emoji} {title} ({owner}) · Dónde Comemos',
+  'share.copy': 'Testua kopiatu',
+  'share.copied': 'Kopiatuta',
+  'share.copiedText': 'Itsatsi WhatsAppen edo nahi duzun lekuan.',
+  'share.copyFailed': 'Ezin izan da kopiatu',
+  'share.copyFailedText': 'Sakatu luze testua hautatu eta kopiatzeko.',
+
+  'discover.intro': 'Zure lagunek partekatzen dituzten zerrendak. Eman ❤️ onak iruditzen zaizkizunei.',
+  'discover.top': '🏆 Gogokoenak',
+  'discover.new': '🆕 Berrienak',
+  'discover.emptyTitle': 'Ezer ez hemen',
+  'discover.emptyText': 'Zure lagunek zerrendak partekatzen dituztenean, hemen agertuko dira.',
+
+  'myLists.create': '＋ Zerrenda sortu',
+  'myLists.emptyTitle': 'Oraindik ez duzu zerrendarik',
+  'myLists.emptyText': 'Sortu bat eta hasi jan duzun lekuak gehitzen.',
+  'myLists.liked': '❤️ Gustuko dituzun zerrendak',
+
+  'list.gone': 'Zerrenda hau jada ez dago',
+  'list.yours': 'Zure zerrenda',
+  'list.by': 'Egilea: {name}',
+  'list.addPlace': '＋ Lekua gehitu',
+  'list.liked': '❤️ Gustuko duzu',
+  'list.like': '🤍 Zerrenda hau gustatzen zait',
+  'list.share': '📤 Partekatu',
+  'list.emptyTitle': 'Zerrenda hutsik',
+  'list.emptyText': 'Bilatu jatetxe bat eta gehitu zure iritzia.',
+  'list.removeEntry': 'Zerrendatik kendu?',
+  'list.delete': 'Zerrenda ezabatu',
+  'list.deleteConfirm': 'Zerrenda hau ezabatu?',
+  'list.cantUndo': 'Ezin da desegin.',
+
+  'newList.name': 'Izena',
+  'newList.namePh': 'Adib.: Bilboko pintxo onenak',
+  'newList.description': 'Deskribapena',
+  'newList.descriptionPh': 'Zertaz doa zerrenda hau?',
+  'newList.public': 'Zerrenda publikoa',
+  'newList.publicHelp': 'Zure lagunek Aurkitu atalean ikusiko dute, eta gustukoa dela adierazi ahal izango dute.',
+  'newList.saveChanges': 'Aldaketak gorde',
+  'newList.create': 'Zerrenda sortu',
+
+  'add.searchPh': '🔍 Bilatu jatetxe bat izenez, auzoz edo motaz',
+  'add.google': 'Googleren emaitzak',
+  'add.mock': 'Proba modua: adibideko jatetxeak (probatu "pizza", "Malasaña" edo "sushi")',
+  'add.noResults': 'Ez dago emaitzarik “{q}” bilaketarako.',
+  'add.change': 'Aldatu',
+  'add.visited': 'Hemen egon naiz',
+  'add.visitedHelp': 'Zure profilean gordetzen da',
+  'add.score': 'Zure nota',
+  'add.pros': '👍 Alde onak',
+  'add.prosPh': 'Zer gustatu zitzaizun',
+  'add.cons': '👎 Alde txarrak',
+  'add.consPh': 'Zer hobetuko zenuke',
+  'add.reco': '💡 Gomendioa',
+  'add.recoPh': 'Zer eskatu, noiz joan, erreserbatu behar den…',
+
+  'entry.wantOne': 'Joan nahi: {n}',
+  'entry.wantMany': 'Joan nahi: {n}',
+
+  'roulette.source': 'Nondik aukeratuko dugu?',
+  'roulette.all': '🌍 Nire leku guztiak',
+  'roulette.area': 'Gunea',
+  'roulette.allAreas': 'Guztiak',
+  'roulette.cuisine': 'Janari mota',
+  'roulette.allCuisines': 'Guztiak',
+  'roulette.onlyNew': 'Egon ez naizen lekuak bakarrik',
+  'roulette.emptyTitle': 'Ez dago lekurik iragazki horiekin',
+  'roulette.emptyText': 'Kendu iragazkiren bat edo gehitu jatetxeak zure zerrendetara.',
+  'roulette.spinning': 'Biraka…',
+  'roulette.again': '🎲 Berriro',
+  'roulette.spin': '🎲 Erruleta biratu!',
+  'roulette.tonight': 'Gaur hemen afalduko duzue',
+  'roulette.went': '✅ Joan gara: nire profilean gorde',
+
+  'groups.create': '＋ Taldea sortu',
+  'groups.emptyTitle': 'Ez zaude inongo taldetan',
+  'groups.emptyText': 'Sortu bat edo batu kode batekin.',
+  'groups.people': '{n} pertsona',
+  'groups.openPoll': 'bozketa {n} irekita',
+  'groups.openPolls': '{n} bozketa irekita',
+  'groups.join': 'Talde batean sartu',
+  'groups.codePh': 'Gonbidapen-kodea',
+  'groups.joinBtn': 'Sartu',
+  'groups.badCode': 'Kode okerra',
+  'groups.badCodeText': 'Egiaztatu bidali dizuten kodea. (Proba moduan BRUNCH erabil dezakezu)',
+
+  'newGroup.name': 'Taldearen izena',
+  'newGroup.namePh': 'Adib.: Unibertsitateko afariak',
+  'newGroup.friends': 'Lagunak gehitu',
+  'newGroup.help': 'Jende gehiago ere gonbidatu ahal izango duzu taldearen kodearekin.',
+  'newGroup.create': 'Taldea sortu',
+
+  'poll.ideas': 'Ideia azkarrak',
+  'poll.qWhere': 'Non afalduko dugu?',
+  'poll.qDay': 'Zein egunetan geratuko gara?',
+  'poll.qTime': 'Zer ordutan?',
+  'poll.fri': 'Ostirala',
+  'poll.sat': 'Larunbata',
+  'poll.sun': 'Igandea',
+  'poll.question': 'Galdera',
+  'poll.questionPh': 'Zer erabaki nahi duzue?',
+  'poll.options': 'Aukerak',
+  'poll.optionPh': '{n}. aukera',
+  'poll.addOption': '＋ Aukera gehitu',
+  'poll.create': 'Bozketa sortu',
+  'poll.closed': 'Itxita',
+  'poll.vote': 'boto {n}',
+  'poll.votes': '{n} boto',
+  'poll.reopen': 'Bozketa berriro ireki',
+  'poll.close': 'Bozketa itxi',
+
+  'group.gone': 'Talde hau jada ez dago',
+  'group.inviteTitle': 'Gonbidapena: {name}',
+  'group.inviteText': 'Sartu nire "{name}" taldean Dónde Comemos-en! Kodea: {code}',
+  'group.code': 'Kodea:',
+  'group.invite': '📨 Gonbidatu',
+  'group.tabPlaces': '🍽️ Lekuak ({n})',
+  'group.tabPolls': '🗳️ Bozketak',
+  'group.tabChat': '💬 Txata ({n})',
+  'group.leave': 'Taldetik irten',
+  'group.leaveConfirm': 'Taldetik irten?',
+  'group.leaveBtn': 'Irten',
+  'group.propose': '＋ Leku bat proposatu',
+  'group.voteHelp': 'Sakatu ✋ joan nahi duzun lekuetan. Boto gehien dituztenak goian agertzen dira.',
+  'group.noPlacesTitle': 'Oraindik ez dago lekurik',
+  'group.noPlacesText': 'Proposatu lehenengoa.',
+  'group.removePlace': 'Leku hau kendu?',
+  'group.newPoll': '＋ Bozketa berria',
+  'group.noPollsTitle': 'Ez dago bozketarik',
+  'group.noPollsText': 'Erabaki lekua, eguna edo ordua bozkatuz.',
+  'group.noMsgTitle': 'Mezurik ez',
+  'group.noMsgText': 'Idatzi lehenengoa.',
+  'group.msgPh': 'Idatzi mezu bat…',
+  'group.send': 'Bidali',
+
+  'profile.name': 'Zure izena',
+  'profile.visited': 'Bisitatutako lekuak',
+  'profile.lists': 'Zerrendak',
+  'profile.likes': 'Gustukoak',
+  'profile.groups': 'Taldeak',
+  'profile.topCuisines': 'Gehien jaten duzuna',
+  'profile.history': '📍 Non egon naiz',
+  'profile.noVisitsTitle': 'Oraindik ez dago bisitarik',
+  'profile.noVisitsText': 'Zerrenda batera leku bat gehitzean, markatu «Hemen egon naiz».',
+  'profile.removeVisit': 'Bisita kendu?',
+  'profile.language': 'Hizkuntza',
+  'profile.testTitle': '🧪 Proba bertsioa',
+  'profile.testText': 'Datuak mugikor honetan bakarrik gordetzen dira, eta zure lagunak adibidekoak dira.',
+  'profile.testMock': ' Bilaketak adibideko jatetxeak erabiltzen ditu Google konektatu arte.',
+  'profile.reset': 'Adibideko datuak berrezarri',
+  'profile.resetConfirm': 'Berrezarri?',
+  'profile.resetText': 'Gehitu duzun guztia ezabatuko da.',
+  'profile.resetBtn': 'Berrezarri',
+};
+
+const STRINGS: Record<Lang, Record<StringKey, string>> = { es, eu };
+
+// Tipos de cocina de los datos de ejemplo. Los de Google ya vienen en el idioma pedido.
+const CUISINES_EU: Record<string, string> = {
+  Tapas: 'Pintxoak',
+  Italiana: 'Italiarra',
+  Japonesa: 'Japoniarra',
+  Asador: 'Erretegia',
+  Mexicana: 'Mexikarra',
+  India: 'Indiarra',
+  Española: 'Espainiarra',
+  Marisquería: 'Itsaskiak',
+  Hamburguesas: 'Hanburgesak',
+  Pizzería: 'Pizzeria',
+  Vegetariana: 'Begetarianoa',
+  Peruana: 'Perukoa',
+  China: 'Txinatarra',
+  Tailandesa: 'Thailandiarra',
+  Francesa: 'Frantsesa',
+  Turca: 'Turkiarra',
+};
+
+let current: Lang = 'es';
+
+export const getLang = () => current;
+export const setLang = (lang: Lang) => {
+  current = lang;
+};
+
+export function deviceLang(): Lang {
+  try {
+    const locale = Intl.DateTimeFormat().resolvedOptions().locale ?? '';
+    return locale.toLowerCase().startsWith('eu') ? 'eu' : 'es';
+  } catch {
+    return 'es';
+  }
+}
+
+export function t(key: StringKey, params?: Record<string, string | number>) {
+  let s = STRINGS[current][key] ?? es[key];
+  if (params) for (const [k, v] of Object.entries(params)) s = s.split(`{${k}}`).join(String(v));
+  return s;
+}
+
+/** Elige la forma singular o plural según n. */
+export const tn = (n: number, one: StringKey, many: StringKey) => t(n === 1 ? one : many, { n });
+
+export const cuisineLabel = (c: string) => (current === 'eu' ? CUISINES_EU[c] ?? c : c);
+
+export const LANGUAGES: { code: Lang; label: string }[] = [
+  { code: 'es', label: 'Castellano' },
+  { code: 'eu', label: 'Euskara' },
+];
