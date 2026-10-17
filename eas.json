@@ -7,8 +7,9 @@
       "android": { "buildType": "apk" }
     },
     "production": {
-      "environment": "production",
-      "autoIncrement": true
+      "environment": "preview",
+      "autoIncrement": true,
+      "android": { "buildType": "apk" }
     }
   }
 }
