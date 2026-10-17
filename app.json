@@ -26,6 +26,9 @@
       "output": "single",
       "name": "Dónde Comemos",
       "themeColor": "#E8572A"
-    }
+    },
+    "plugins": [
+      "expo-web-browser"
+    ]
   }
 }

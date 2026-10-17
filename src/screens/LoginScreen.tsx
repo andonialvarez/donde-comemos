@@ -57,17 +57,13 @@ export function LoginScreen() {
             <Text style={styles.h1}>{t('auth.title')}</Text>
             <Text style={[styles.body, { color: colors.muted, textAlign: 'center' }]}>{t('auth.subtitle')}</Text>
           </View>
-          {Platform.OS === 'web' && (
-            <>
-              <Button
-                variant="secondary"
-                title={`G  ${t('auth.google')}`}
-                disabled={busy}
-                onPress={() => signInWithGoogle().catch((e) => notify(t('auth.error'), String(e?.message ?? e)))}
-              />
-              <Text style={[styles.muted, { textAlign: 'center' }]}>{t('auth.or')}</Text>
-            </>
-          )}
+          <Button
+            variant="secondary"
+            title={`G  ${t('auth.google')}`}
+            disabled={busy}
+            onPress={() => signInWithGoogle().catch((e) => notify(t('auth.error'), String(e?.message ?? e)))}
+          />
+          <Text style={[styles.muted, { textAlign: 'center' }]}>{t('auth.or')}</Text>
           {mode === 'signup' && <Field placeholder={t('auth.name')} value={name} onChangeText={setName} autoComplete="name" />}
           <Field
             placeholder={t('auth.email')}
