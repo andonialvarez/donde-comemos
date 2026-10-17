@@ -86,8 +86,8 @@ const es = {
   'newList.namePh': 'Ej: Mejores tapas de Madrid',
   'newList.description': 'Descripción',
   'newList.descriptionPh': '¿De qué va esta lista?',
-  'newList.public': 'Lista pública',
-  'newList.publicHelp': 'Tus amigos la verán en Descubrir y podrán darle me gusta.',
+  'newList.public': 'Compartir en Descubrir',
+  'newList.publicHelp': 'Si la activas, cualquiera con cuenta la verá en Descubrir y podrá darle me gusta. Si no, solo la ves tú.',
   'newList.saveChanges': 'Guardar cambios',
   'newList.create': 'Crear lista',
 
@@ -311,8 +311,8 @@ const eu: Record<StringKey, string> = {
   'newList.namePh': 'Adib.: Bilboko pintxo onenak',
   'newList.description': 'Deskribapena',
   'newList.descriptionPh': 'Zertaz doa zerrenda hau?',
-  'newList.public': 'Zerrenda publikoa',
-  'newList.publicHelp': 'Zure lagunek Aurkitu atalean ikusiko dute, eta gustukoa dela adierazi ahal izango dute.',
+  'newList.public': 'Aurkitu atalean partekatu',
+  'newList.publicHelp': 'Aktibatzen baduzu, kontua duen edonork Aurkitu atalean ikusiko du eta gustukoa dela adierazi ahal izango du. Bestela, zuk bakarrik ikusiko duzu.',
   'newList.saveChanges': 'Aldaketak gorde',
   'newList.create': 'Zerrenda sortu',
 

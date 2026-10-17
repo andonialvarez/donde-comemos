@@ -15,7 +15,7 @@ export function NewListScreen({ route, navigation }: ScreenProps<'NewList'>) {
   const [title, setTitle] = useState(editing?.title ?? '');
   const [description, setDescription] = useState(editing?.description ?? '');
   const [emoji, setEmoji] = useState(editing?.emoji ?? '⭐');
-  const [isPublic, setIsPublic] = useState(editing?.isPublic ?? true);
+  const [isPublic, setIsPublic] = useState(editing?.isPublic ?? false);
 
   const save = () => {
     const data = { title: title.trim(), description: description.trim(), emoji, isPublic };
